@@ -138,6 +138,8 @@ config config status.showUntrackedFiles no
 I hope you find this technique useful to track your configuration. If you're curious, [my dotfiles live here](https://bitbucket.org/durdn/cfg.git). Also please do stay connected by following [@durdn](https://www.twitter.com/durdn) or my awesome team at [@atlassiandev](https://www.twitter.com/atlassiandev).
 
 
+source: [source]
+
 [source]: https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 [install-script]: http://bit.do/dfc_dotfiles_install
 
