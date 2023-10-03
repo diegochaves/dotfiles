@@ -1,0 +1,39 @@
+# ~/.config/zsh/aliases: aliases config file
+# Author: Diego Ferreira Chaves <dfchaves@gmail.com>
+# Source: https://github.com/diegochaves/dotfiles
+
+# bare git repo alias for dotfiles
+alias dotfiles='$(which git) --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+#replacing ls with exa
+alias ls='exa --color=always --icons -F -H --group-directories-first -1'
+
+# Colorize grep output (good for log files)
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+#HTTP Serve current directory
+alias serve='python -m http.server'
+
+#apt aliases
+alias aptup='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
+alias aptin='sudo apt install'
+alias aptrm='sudo apt remove'
+
+# adding flags
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+
+# ps
+alias psa="ps auxf"
+alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
+alias psmem='ps auxf | sort -nr -k 4'
+alias pscpu='ps auxf | sort -nr -k 3'
+
+#folder navigation alias
+alias '..'='cd ..'
+alias '...'='cd ../..'
+
+# get error messages from journalctl
+alias jctl="journalctl -p 3 -xb"

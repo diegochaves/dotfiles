@@ -1,0 +1,31 @@
+[user]
+	name = Diego Chaves
+	email = dfchaves@gmail.com
+
+[credential]
+	helper = store
+
+[core]
+	editor = code --wait
+	excludesfile = ~/.gitignore_global
+
+[alias]
+	ci = commit
+	co = checkout
+	cm = checkout master
+	cb = checkout -b
+	fe = fetch origin
+	hist = log --oneline --graph --decorate --all
+	me = config user.name
+	st = status -sb
+	sf = show --name-only
+	lg = log --pretty=format:'%Cred%h%Creset %C(bold)%cr%Creset %Cgreen<%an>%Creset %s' --max-count=30
+	incoming = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..@{u})
+	outgoing = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}..)
+	unstage = reset HEAD --
+	undo = checkout --
+	rollback = reset --soft HEAD~1
+	committers = !(git log | grep Author | sort | uniq -c | sort -n -r)
+	package = !(GZIP=-9 tar --exclude=".git/" -zcvf ../$(basename "$PWD")_$(date +"%Y-%m-%d_%H-%M-%S").tar.gz *)
+	ready = rebase -i @{u}
+	ahead=!sh -c 'echo branch is $(git fetch origin --quiet && git rev-list --count origin/master..HEAD) commits ahead, $(git fetch origin --quiet && git rev-list --count HEAD..origin/master) commits behind master'
