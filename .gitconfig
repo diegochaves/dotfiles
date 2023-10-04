@@ -5,6 +5,12 @@
 [credential]
 	helper = store
 
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential
+
 [core]
 	editor = code --wait
 	excludesfile = ~/.gitignore_global
@@ -29,3 +35,4 @@
 	package = !(GZIP=-9 tar --exclude=".git/" -zcvf ../$(basename "$PWD")_$(date +"%Y-%m-%d_%H-%M-%S").tar.gz *)
 	ready = rebase -i @{u}
 	ahead=!sh -c 'echo branch is $(git fetch origin --quiet && git rev-list --count origin/master..HEAD) commits ahead, $(git fetch origin --quiet && git rev-list --count HEAD..origin/master) commits behind master'
+
