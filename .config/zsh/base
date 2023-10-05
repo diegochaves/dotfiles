@@ -2,8 +2,8 @@
 # Author: Diego Ferreira Chaves <dfchaves@gmail.com>
 # Source: https://github.com/diegochaves/dotfiles
 
-export ZSH_DIR="$HOME/.config/zsh"
+export ZSH="$HOME/.config/zsh"
 
-source ${ZSH_DIR}/aliases
-source ${ZSH_DIR}/envs
-source ${ZSH_DIR}/functions
+source ${ZSH}/aliases
+source ${ZSH}/envs
+source ${ZSH}/functions

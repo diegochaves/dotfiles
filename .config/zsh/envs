@@ -3,12 +3,20 @@
 # Source: https://github.com/diegochaves/dotfiles
 
 ### EXPORT
-export TERM="xterm-256color"                      # getting proper colors
-export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
+export TERM="xterm-256color"
 
+export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
+
+export EDITOR="vim"
+export TERMINAL="tilix"
+export BROWSER="brave"
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
 
 # setting PATH
 if [ -d "$HOME/.bin" ] ;
