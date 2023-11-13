@@ -6,7 +6,7 @@
 alias dotfiles='$(which git) --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 #replacing ls with exa
-alias ls='exa --color=always --icons -F -H --group-directories-first -1'
+alias ls='eza --color=always --icons -F -H --group-directories-first -1'
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
